@@ -3,6 +3,7 @@ import { Github, Languages, Linkedin, Menu, Moon, Sun, X } from "lucide-react";
 import { usePreferences } from "../context/PreferencesContext";
 import { contactInfo } from "../data/content";
 import CVDownload from "./CVDownload";
+import BrandLogo from "./BrandLogo";
 
 export default function Navbar({ t }) {
   const { language, setLanguage, theme, toggleTheme } = usePreferences();
@@ -25,7 +26,7 @@ export default function Navbar({ t }) {
     <header className="site-header">
       <nav className="nav shell" aria-label="Primary navigation">
         <a className="brand" href="#home" onClick={close} aria-label="Marouane Morfi home">
-          MM<span>.</span>
+          <BrandLogo />
         </a>
 
         <div className={`nav-links ${open ? "open" : ""}`}>
