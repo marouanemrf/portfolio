@@ -15,10 +15,6 @@ const icons = [CodeXml, PanelsTopLeft, ServerCog, Database, BrainCircuit, CloudC
 export default function Skills({ t }) {
   const { language } = usePreferences();
   const groups = profileData[language].skills;
-  const categoryNames = {
-    fr: ["Intelligence artificielle & Machine Learning", "Backend & ingénierie logicielle", "Frontend", "Bases de données", "DevOps & infrastructure", "IoT & communication"],
-    ar: ["الذكاء الاصطناعي والتعلم الآلي", "Backend وهندسة البرمجيات", "Frontend", "قواعد البيانات", "DevOps والبنية التحتية", "إنترنت الأشياء والاتصالات"],
-  }[language];
   return (
     <section id="skills" className="section section-muted section-anchor">
       <div className="shell">
@@ -31,7 +27,7 @@ export default function Skills({ t }) {
               <article className="panel skill-card reveal" key={group.name}>
                 <div className="skill-head">
                   <span className="skill-icon"><Icon size={21} /></span>
-                  <h3>{categoryNames?.[index] || group.name}</h3>
+                  <h3>{group.name}</h3>
                 </div>
                 <div className="tag-list">
                   {group.items.map((item) => <span key={item}>{item}</span>)}

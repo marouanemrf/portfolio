@@ -764,7 +764,6 @@ button {
 .development-badge, .project-status { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 900; }
 .development-badge { padding: 8px 12px; border-radius: 999px; color: #f6b94b; border: 1px solid color-mix(in srgb, #f6b94b 35%, transparent); background: color-mix(in srgb, #f6b94b 8%, transparent); }
 .project-status { color: var(--accent-3); margin-top: 4px; }
-.project-status span { width: 8px; height: 8px; border-radius: 50%; background: currentColor; box-shadow: 0 0 12px currentColor; }
 .architecture-flow { margin: 30px 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .architecture-step { position: relative; min-height: 105px; padding: 17px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; text-align: center; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--panel-solid) 55%, transparent); font-size: 12px; }
 .architecture-step > span { color: var(--accent); }

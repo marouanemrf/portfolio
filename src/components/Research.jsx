@@ -5,6 +5,16 @@ import { usePreferences } from "../context/PreferencesContext";
 
 export default function Research({ t }) {
   const { language } = usePreferences();
+  const researchLabels = {
+    en: { publication: "IEEE Publication", model: "Model", title: researchBenchmark.title },
+    fr: { publication: "Publication IEEE", model: "Modèle", title: "Détection des maladies des feuilles de tomate en conditions réelles : étude comparative de YOLOv5 à YOLOv12" },
+    ar: { publication: "منشور IEEE", model: "النموذج", title: "اكتشاف أمراض أوراق الطماطم في الظروف الواقعية: دراسة مقارنة من YOLOv5 إلى YOLOv12" },
+  }[language];
+  const termTranslations = {
+    fr: { Precision: "Précision", Recall: "Rappel", "Model size": "Taille du modèle", "Inference speed": "Vitesse d’inférence", "Real-world tomato disease detection": "Détection réelle des maladies de la tomate", "Computer Vision": "Vision par ordinateur", "Object Detection": "Détection d’objets", "Model Size": "Taille du modèle", "Inference Speed": "Vitesse d’inférence", "Edge / Mobile Deployment": "Déploiement edge / mobile" },
+    ar: { Precision: "الدقة", Recall: "الاستدعاء", "Model size": "حجم النموذج", "Inference speed": "سرعة الاستدلال", "Real-world tomato disease detection": "الكشف الواقعي عن أمراض الطماطم", "Computer Vision": "الرؤية الحاسوبية", "Object Detection": "كشف الأجسام", "Model Size": "حجم النموذج", "Inference Speed": "سرعة الاستدلال", "Edge / Mobile Deployment": "النشر على الحافة / الهاتف" },
+  };
+  const translateTerm = (term) => termTranslations[language]?.[term] ?? term;
   const publicationCopy = {
     en: { view: "View on IEEE Xplore", abstract: "Abstract", highlights: "Research highlights", text: "Tomato (Solanum lycopersicum L.) production is threatened by foliar diseases that can cause severe yield and quality losses if not detected early. To support practical monitoring, this paper compares six YOLO small variants for real-world tomato disease detection using a manually annotated bounding-box dataset collected in open fields and greenhouses. Under a unified training/evaluation protocol, YOLOv5s, YOLOv8s, YOLOv9s, YOLOv10s, YOLOv11s, and YOLOv12s are benchmarked using mAP@0.5, mAP@0.5:0.95, precision, recall, and F1-score, alongside deployability indicators (speed, model size, FLOPs). The results highlight clear accuracy–efficiency trade-offs and provide guidance for selecting models for mobile/edge tomato disease monitoring." },
     fr: { view: "Voir sur IEEE Xplore", abstract: "Résumé", highlights: "Points clés de la recherche", text: "La production de tomate est menacée par des maladies foliaires pouvant causer de graves pertes de rendement et de qualité sans détection précoce. Cette étude compare six petites variantes YOLO sur un jeu de données annoté manuellement, collecté en plein champ et sous serre. Un protocole unifié évalue YOLOv5s à YOLOv12s selon la précision, le rappel, le F1-score, les mAP, la vitesse, la taille et les FLOPs afin d'éclairer le choix de modèles pour un déploiement mobile ou edge." },
@@ -25,10 +35,10 @@ export default function Research({ t }) {
         <div className="research-hero panel reveal">
           <div>
             <span className="research-label"><Microscope size={16} /> {t.research.label}</span>
-            <h3>{researchBenchmark.title}</h3>
+            <h3>{researchLabels.title}</h3>
           </div>
           <div className="publication-actions">
-            <div className="research-badge">IEEE Publication</div>
+            <div className="research-badge">{researchLabels.publication}</div>
             <a className="button button-primary" href={researchBenchmark.url} target="_blank" rel="noreferrer">
               {publicationCopy.view} <ArrowUpRight size={17} />
             </a>
@@ -70,7 +80,7 @@ export default function Research({ t }) {
             <h4>{t.research.metricsTitle}</h4>
             <p>{t.research.metricsText}</p>
             <div className="metric-cloud">
-              {researchBenchmark.metrics.map((metric) => <span key={metric}>{metric}</span>)}
+              {researchBenchmark.metrics.map((metric) => <span key={metric}>{translateTerm(metric)}</span>)}
             </div>
           </article>
 
@@ -85,8 +95,8 @@ export default function Research({ t }) {
                 <table className="benchmark-table">
                   <thead>
                     <tr>
-                      <th>Model</th>
-                      {researchBenchmark.metrics.map((metric) => <th key={metric}>{metric}</th>)}
+                      <th>{researchLabels.model}</th>
+                      {researchBenchmark.metrics.map((metric) => <th key={metric}>{translateTerm(metric)}</th>)}
                     </tr>
                   </thead>
                   <tbody>
@@ -126,7 +136,7 @@ export default function Research({ t }) {
         <div className="research-highlights reveal" aria-label={publicationCopy.highlights}>
           <strong>{publicationCopy.highlights}</strong>
           <div className="tag-list">
-            {researchBenchmark.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}
+            {researchBenchmark.highlights.map((highlight) => <span key={highlight}>{translateTerm(highlight)}</span>)}
           </div>
         </div>
       </div>

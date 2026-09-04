@@ -7,6 +7,8 @@ import { usePreferences } from "../context/PreferencesContext";
 export default function Contact({ t }) {
   const { language } = usePreferences();
   const copy = profileData[language].contact;
+  const country = { en: "Morocco", fr: "Maroc", ar: "المغرب" }[language];
+  const mailCopy = { en: { subject: "Portfolio contact", from: "From" }, fr: { subject: "Contact depuis le portfolio", from: "De" }, ar: { subject: "تواصل من معرض الأعمال", from: "من" } }[language];
   const items = [
     {
       label: t.contact.email,
@@ -31,8 +33,8 @@ export default function Contact({ t }) {
   const submit = (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Portfolio contact — ${form.get("name")}`);
-    const body = encodeURIComponent(`${form.get("message")}\n\nFrom: ${form.get("name")} (${form.get("email")})`);
+    const subject = encodeURIComponent(`${mailCopy.subject} — ${form.get("name")}`);
+    const body = encodeURIComponent(`${form.get("message")}\n\n${mailCopy.from}: ${form.get("name")} (${form.get("email")})`);
     window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
   };
 
@@ -64,7 +66,7 @@ export default function Contact({ t }) {
               <span><MapPin size={19} /></span>
               <div>
                 <small>{copy.location}</small>
-                <strong>Morocco</strong>
+                <strong>{country}</strong>
               </div>
             </div>
           </div>

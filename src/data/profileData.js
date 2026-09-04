@@ -66,6 +66,40 @@ profileData.ar.projects[3] = { ...profileData.ar.projects[3], title: "تطبيق
 profileData.fr.status = { completed: "Terminé", research: "Recherche", development: "Actuellement en développement", academic: "Projet académique", professional: "Travail professionnel" };
 profileData.ar.status = { completed: "مكتمل", research: "بحث", development: "قيد التطوير حالياً", academic: "مشروع أكاديمي", professional: "عمل مهني" };
 
+profileData.fr.skills = profileData.en.skills.map((group, index) => ({
+  ...group,
+  name: ["Intelligence artificielle et Machine Learning", "Backend et ingénierie logicielle", "Frontend", "Bases de données", "DevOps et infrastructure", "IoT et communication"][index],
+  items: group.items.map((item) => ({
+    "Artificial Intelligence": "Intelligence artificielle", "Machine Learning": "Apprentissage automatique", "Deep Learning": "Apprentissage profond", "Computer Vision": "Vision par ordinateur", "AI Agents": "Agents IA", "Sentence Transformers": "Transformers de phrases", "REST APIs": "API REST",
+  }[item] ?? item)),
+}));
+profileData.ar.skills = profileData.en.skills.map((group, index) => ({
+  ...group,
+  name: ["الذكاء الاصطناعي والتعلم الآلي", "Backend وهندسة البرمجيات", "الواجهة الأمامية", "قواعد البيانات", "DevOps والبنية التحتية", "إنترنت الأشياء والاتصالات"][index],
+  items: group.items.map((item) => ({
+    "Artificial Intelligence": "الذكاء الاصطناعي", "Machine Learning": "التعلم الآلي", "Deep Learning": "التعلم العميق", "Computer Vision": "الرؤية الحاسوبية", "AI Agents": "وكلاء الذكاء الاصطناعي", "Sentence Transformers": "محولات الجمل", "REST APIs": "واجهات REST",
+  }[item] ?? item)),
+}));
+
+const frProjectIdentity = [
+  ["Détection des maladies des feuilles de tomate", "Vision par ordinateur"],
+  ["FaceSmart", "Vision par ordinateur"],
+  ["Irrigation intelligente / IoT", "IoT + IA"],
+  ["Application mobile de chat en temps réel", "Mobile / Backend"],
+  ["Interface web de gestion de données", "Web + données"],
+];
+const arProjectIdentity = [
+  ["اكتشاف أمراض أوراق الطماطم", "الرؤية الحاسوبية"],
+  ["FaceSmart", "الرؤية الحاسوبية"],
+  ["الري الذكي / إنترنت الأشياء", "إنترنت الأشياء + الذكاء الاصطناعي"],
+  ["تطبيق محادثة فورية للهواتف", "الهاتف / Backend"],
+  ["واجهة ويب لإدارة البيانات", "الويب + البيانات"],
+];
+const frTechTerms = { "Computer Vision": "Vision par ordinateur", "Face Recognition": "Reconnaissance faciale", "Desktop Application": "Application desktop", "IoT Sensors": "Capteurs IoT", "AI / Machine Learning": "IA / Machine Learning", "Web Interface": "Interface web", Database: "Base de données" };
+const arTechTerms = { "Computer Vision": "الرؤية الحاسوبية", "Face Recognition": "التعرف على الوجه", "Desktop Application": "تطبيق مكتبي", "IoT Sensors": "حساسات إنترنت الأشياء", "AI / Machine Learning": "الذكاء الاصطناعي / التعلم الآلي", "Web Interface": "واجهة ويب", Database: "قاعدة بيانات" };
+profileData.fr.projects = profileData.fr.projects.map((project, index) => ({ ...project, title: frProjectIdentity[index][0], category: frProjectIdentity[index][1], tech: project.tech.map((term) => frTechTerms[term] ?? term) }));
+profileData.ar.projects = profileData.ar.projects.map((project, index) => ({ ...project, title: arProjectIdentity[index][0], category: arProjectIdentity[index][1], tech: project.tech.map((term) => arTechTerms[term] ?? term) }));
+
 profileData.en.experiences = [
   { company: "CGI", role: ".NET / Blazor Software Engineer Intern (PFE)", period: "6 months", location: "Hybrid — Rabat, Morocco", description: "Contributed to the progressive modernization of SIGMA, a legacy enterprise information system, from COBOL/EGL and mainframe technologies to the Microsoft .NET ecosystem.", achievements: ["Migrated legacy application screens to Blazor and MudBlazor while preserving existing business behavior.", "Contributed to the modernization of COBOL/JCL batch processing with .NET.", "Worked across ASP.NET Core services, REST APIs, EF Core repositories and SQL Server data access.", "Applied Clean Architecture and Domain-Driven Design principles in an Agile/Scrum environment."], tech: ["COBOL", "EGL", "JCL", ".NET", "C#", "ASP.NET Core", "Blazor", "MudBlazor", "EF Core", "SQL Server", "Clean Architecture", "DDD"] },
   { company: "UXV Center", role: "AI Chatbot Full-Stack Developer Intern", period: "2 months", location: "Remote — Switzerland", description: "Developed an AI-powered chatbot using full-stack technologies.", achievements: ["Contributed to web, mobile and backend components of the chatbot.", "Worked with React, React Native, FastAPI, Spring, MongoDB, Python and NLP."], tech: ["React", "React Native", "FastAPI", "Spring", "MongoDB", "Python", "NLP"] },

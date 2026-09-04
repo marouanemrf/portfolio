@@ -8,9 +8,9 @@ const labels = {
 };
 
 const versions = [
-  { code: "ENG", name: "English", file: "/Marouane_Morfi_CV_ENG.pdf" },
-  { code: "FR", name: "Français", file: "/Marouane_Morfi_CV_FR.pdf" },
-  { code: "AR", name: "العربية", file: "/Marouane_Morfi_CV_AR.pdf" },
+  { code: "ENG", names: { en: "English", fr: "Anglais", ar: "الإنجليزية" }, file: "/Marouane_Morfi_CV_ENG.pdf" },
+  { code: "FR", names: { en: "French", fr: "Français", ar: "الفرنسية" }, file: "/Marouane_Morfi_CV_FR.pdf" },
+  { code: "AR", names: { en: "Arabic", fr: "Arabe", ar: "العربية" }, file: "/Marouane_Morfi_CV_AR.pdf" },
 ];
 
 export default function CVDownload({ compact = false }) {
@@ -26,7 +26,7 @@ export default function CVDownload({ compact = false }) {
       <div className="cv-menu" role="menu" aria-label={copy.choose}>
         {versions.map((version) => (
           <a href={version.file} download key={version.code} role="menuitem">
-            <strong>{version.code}</strong><span>{version.name}</span><Download size={14} />
+            <strong>{version.code}</strong><span>{version.names[language]}</span><Download size={14} />
           </a>
         ))}
       </div>
