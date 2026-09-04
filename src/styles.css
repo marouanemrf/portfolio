@@ -276,14 +276,6 @@ button {
   font-weight: 800;
 }
 
-.availability-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-3);
-  box-shadow: 0 0 14px var(--accent-3);
-}
-
 .hero-greeting {
   margin: 25px 0 2px;
   color: var(--muted);

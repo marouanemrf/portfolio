@@ -16,7 +16,6 @@ export default function Hero({ t }) {
       <div className="shell hero-grid">
         <div className="hero-copy reveal">
           <div className="availability">
-            <span className="availability-dot" />
             {t.hero.badge}
           </div>
 
