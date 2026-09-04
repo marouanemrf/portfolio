@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Marouane Morfi CV</title>
+  <style>
+    @page { size: A4; margin: 9mm 11mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #172033; font-family: Arial, "Segoe UI", Tahoma, sans-serif; font-size: 8.35pt; line-height: 1.25; }
+    body[dir="rtl"] { font-family: Tahoma, Arial, sans-serif; }
+    header { border-bottom: 2px solid #176b87; padding-bottom: 5px; margin-bottom: 5px; }
+    h1 { margin: 0; font-size: 23pt; line-height: 1; letter-spacing: -.5px; color: #10243e; }
+    .headline { margin: 3px 0; color: #176b87; font-size: 10pt; font-weight: 700; }
+    .contact { font-size: 7.6pt; color: #35445a; overflow-wrap: anywhere; }
+    section { margin-top: 5px; }
+    h2 { margin: 0 0 3px; padding-bottom: 1px; border-bottom: 1px solid #aebdca; color: #176b87; font-size: 9.5pt; letter-spacing: .55px; text-transform: uppercase; }
+    p { margin: 0; }
+    .entry { margin-bottom: 3.5px; break-inside: avoid; }
+    .entry-head { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; color: #10243e; }
+    body[dir="rtl"] .entry-head { flex-direction: row-reverse; }
+    .role { color: #176b87; }
+    ul { margin: 1.5px 0 0; padding-inline-start: 15px; }
+    li { margin: .7px 0; }
+    .skills p { margin: 1.4px 0; }
+    .skills strong { color: #10243e; }
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 13px; }
+    .project { break-inside: avoid; }
+    .project strong { color: #10243e; }
+    .publication { border-inline-start: 2px solid #176b87; padding-inline-start: 6px; }
+    .muted { color: #506079; }
+  </style>
+</head>
+<body><main id="cv"></main>
+<script>
+const common = {
+  email: "marouanemorfi@gmail.com", phone: "+212 620 550 787", location: "Marrakech, Morocco",
+  linkedin: "linkedin.com/in/marouane-morfi-3a5a08294", github: "github.com/marouanemrf"
+};
+const data = {
+en: {
+  dir:"ltr", title:"Computer Engineer | AI & Machine Learning | .NET & Java Developer",
+  labels:{profile:"Professional Profile",experience:"Experience",skills:"Technical Skills",projects:"Selected Projects",research:"Research & Publication",education:"Education",certs:"Certifications"},
+  profile:"Computer Engineer focused on artificial intelligence, machine learning and software engineering. Hands-on experience building enterprise interfaces, backend services, database integrations and AI applications with .NET, Java, Python and modern frontend technologies.",
+  exp:[
+    ["CGI — .NET / Blazor Software Engineer Intern (PFE)","Hybrid — Rabat, Morocco | 6 months",["Developed and enhanced enterprise applications using .NET, Blazor, MudBlazor and SQL Server."]],
+    ["UXV Center — AI Chatbot Full-Stack Developer Intern","Remote — Switzerland | 2 months",["Developed an AI-powered chatbot using full-stack technologies."]],
+    ["OCP — Software Developer Intern — Access Control Application","On-site — Safi, Morocco | 2 months",["Contributed to the development of an Access Control Application for managing and monitoring access."]]
+  ],
+  skill:[
+    ["AI / ML","Python, PyTorch, TensorFlow, Machine Learning, Deep Learning, Computer Vision, YOLO, RAG, LLMs, AI Agents, LangChain, LangGraph"],
+    ["Backend","C#, .NET, ASP.NET Core, Entity Framework Core, Java, Spring Boot, FastAPI, Flask, REST APIs, Microservices, RabbitMQ"],
+    ["Frontend & Data","React.js, React Native, Blazor, MudBlazor, JavaScript, HTML5, CSS3, SQL Server, PostgreSQL, MongoDB, SQL"],
+    ["DevOps & IoT","Docker, Kubernetes, Terraform, CI/CD, Redis, OpenTelemetry, Prometheus, Grafana, MQTT, CoAP, LoRa, ZigBee"]
+  ],
+  projects:[
+    ["AI Job Intelligence Platform","In development — RAG and local-LLM platform for semantic CV/job matching, skill-gap analysis and application support."],
+    ["FaceSmart","Desktop face-recognition application using Python and computer vision."],
+    ["PotholeEye","Automated pothole detection using Python, PyTorch, C++ and YOLO."],
+    ["Smart Irrigation / IoT","Sensor-based monitoring and AI-assisted irrigation-need estimation."],
+    ["SIGMA","Enterprise UI modernization using Blazor, MudBlazor, .NET, EF Core and SQL Server."],
+    ["Real-Time Mobile Chat Application","Java/Android Studio application with a Spring Boot backend, WebSockets, SMTP, MySQL on Aiven, MVC and DTOs."]
+  ],
+  research:"Real-World Tomato Leaf Disease Detection: A Comparative Study of YOLOv5–YOLOv12 — IEEE publication. Comparative benchmark of six YOLO small variants using real-world, manually annotated open-field and greenhouse data.",
+  education:["EMSI — Engineering Degree, Computer Engineering","Expected graduation: 2026","Chouaïb Doukkali University — Bachelor’s Degree in Physics, Networks and Telecommunications fundamentals (2019–2023)"],
+  certs:"GitHub Copilot (2026) · Introduction to Machine Learning, Coursera (2025) · React Fundamentals, Coursera (2024)"
+},
+fr: {
+  dir:"ltr", title:"Ingénieur informatique | IA & Machine Learning | Développeur .NET & Java",
+  labels:{profile:"Profil professionnel",experience:"Expériences",skills:"Compétences techniques",projects:"Projets sélectionnés",research:"Recherche & publication",education:"Formation",certs:"Certifications"},
+  profile:"Ingénieur informatique orienté intelligence artificielle, Machine Learning et ingénierie logicielle. Expérience pratique dans le développement d’interfaces d’entreprise, de services backend, d’intégrations de bases de données et d’applications IA avec .NET, Java, Python et les technologies frontend modernes.",
+  exp:[
+    ["CGI — Stagiaire ingénieur logiciel .NET / Blazor (PFE)","Hybride — Rabat, Maroc | 6 mois",["Développement et amélioration d’applications d’entreprise avec .NET, Blazor, MudBlazor et SQL Server."]],
+    ["UXV Center — Stagiaire développeur Full Stack — Chatbot IA","À distance — Suisse | 2 mois",["Développement d’un chatbot alimenté par l’intelligence artificielle avec des technologies Full Stack."]],
+    ["OCP — Stagiaire développeur logiciel — Application de contrôle d’accès","Sur site — Safi, Maroc | 2 mois",["Contribution au développement d’une application destinée à gérer et surveiller les accès."]]
+  ],
+  skill:[
+    ["IA / ML","Python, PyTorch, TensorFlow, Machine Learning, Deep Learning, Computer Vision, YOLO, RAG, LLMs, AI Agents, LangChain, LangGraph"],
+    ["Backend","C#, .NET, ASP.NET Core, Entity Framework Core, Java, Spring Boot, FastAPI, Flask, API REST, Microservices, RabbitMQ"],
+    ["Frontend & Data","React.js, React Native, Blazor, MudBlazor, JavaScript, HTML5, CSS3, SQL Server, PostgreSQL, MongoDB, SQL"],
+    ["DevOps & IoT","Docker, Kubernetes, Terraform, CI/CD, Redis, OpenTelemetry, Prometheus, Grafana, MQTT, CoAP, LoRa, ZigBee"]
+  ],
+  projects:[
+    ["AI Job Intelligence Platform","En développement — plateforme RAG et LLM locaux pour le matching CV/offre, l’analyse des compétences et l’aide à la candidature."],
+    ["FaceSmart","Application desktop de reconnaissance faciale avec Python et Computer Vision."],
+    ["PotholeEye","Détection automatisée de nids-de-poule avec Python, PyTorch, C++ et YOLO."],
+    ["Smart Irrigation / IoT","Suivi par capteurs et estimation intelligente des besoins d’irrigation."],
+    ["SIGMA","Modernisation d’interfaces d’entreprise avec Blazor, MudBlazor, .NET, EF Core et SQL Server."],
+    ["Application mobile de chat en temps réel","Application Java/Android Studio avec backend Spring Boot, WebSockets, SMTP, MySQL sur Aiven, MVC et DTO."]
+  ],
+  research:"Real-World Tomato Leaf Disease Detection: A Comparative Study of YOLOv5–YOLOv12 — Publication IEEE. Benchmark de six petites variantes YOLO sur des données réelles annotées manuellement, collectées en plein champ et sous serre.",
+  education:["EMSI — Diplôme d’ingénieur, Ingénierie informatique","Diplôme prévu en 2026","Université Chouaïb Doukkali — Licence en Physique, fondamentaux des réseaux et télécommunications (2019–2023)"],
+  certs:"GitHub Copilot (2026) · Introduction au Machine Learning, Coursera (2025) · Fondamentaux de React, Coursera (2024)"
+},
+ar: {
+  dir:"rtl", title:"مهندس حاسوب | الذكاء الاصطناعي والتعلم الآلي | مطور .NET وJava",
+  labels:{profile:"الملف المهني",experience:"الخبرات المهنية",skills:"المهارات التقنية",projects:"مشاريع مختارة",research:"البحث والنشر العلمي",education:"التعليم",certs:"الشهادات"},
+  profile:"مهندس حاسوب متخصص في الذكاء الاصطناعي والتعلم الآلي وهندسة البرمجيات، مع خبرة عملية في تطوير واجهات المؤسسات وخدمات Backend وربط قواعد البيانات وتطبيقات الذكاء الاصطناعي باستخدام .NET وJava وPython وتقنيات الويب الحديثة.",
+  exp:[
+    ["CGI — متدرب هندسة برمجيات .NET / Blazor — مشروع التخرج","نظام هجين — الرباط، المغرب | 6 أشهر",["تطوير وتحسين تطبيقات مؤسسية باستخدام .NET وBlazor وMudBlazor وSQL Server."]],
+    ["UXV Center — متدرب تطوير Full Stack — روبوت محادثة ذكي","عن بُعد — سويسرا | شهران",["تطوير روبوت محادثة مدعوم بالذكاء الاصطناعي باستخدام تقنيات Full Stack."]],
+    ["OCP — متدرب تطوير برمجيات — تطبيق التحكم في الولوج","حضوري — آسفي، المغرب | شهران",["المساهمة في تطوير تطبيق لإدارة ومراقبة الولوج."]]
+  ],
+  skill:[
+    ["الذكاء الاصطناعي","Python, PyTorch, TensorFlow, Machine Learning, Deep Learning, Computer Vision, YOLO, RAG, LLMs, AI Agents, LangChain, LangGraph"],
+    ["Backend","C#, .NET, ASP.NET Core, Entity Framework Core, Java, Spring Boot, FastAPI, Flask, REST APIs, Microservices, RabbitMQ"],
+    ["Frontend والبيانات","React.js, React Native, Blazor, MudBlazor, JavaScript, HTML5, CSS3, SQL Server, PostgreSQL, MongoDB, SQL"],
+    ["DevOps وIoT","Docker, Kubernetes, Terraform, CI/CD, Redis, OpenTelemetry, Prometheus, Grafana, MQTT, CoAP, LoRa, ZigBee"]
+  ],
+  projects:[
+    ["AI Job Intelligence Platform","قيد التطوير — منصة RAG ونماذج LLM محلية لمطابقة السيرة الذاتية مع الوظائف وتحليل فجوات المهارات ودعم التقديم."],
+    ["FaceSmart","تطبيق مكتبي للتعرف على الوجوه باستخدام Python والرؤية الحاسوبية."],
+    ["PotholeEye","كشف آلي عن حفر الطرق باستخدام Python وPyTorch وC++ وYOLO."],
+    ["Smart Irrigation / IoT","مراقبة بالحساسات وتقدير ذكي لاحتياجات الري."],
+    ["SIGMA","تحديث واجهات مؤسسية باستخدام Blazor وMudBlazor و.NET وEF Core وSQL Server."],
+    ["تطبيق محادثة فورية للهواتف","تطبيق Java وAndroid Studio مع Spring Boot وWebSockets وSMTP وMySQL على Aiven وبنية MVC وDTO."]
+  ],
+  research:"Real-World Tomato Leaf Disease Detection: A Comparative Study of YOLOv5–YOLOv12 — منشور على IEEE. مقارنة ستة نماذج صغيرة من YOLO باستخدام بيانات واقعية مشروحة يدوياً من الحقول والبيوت الزجاجية.",
+  education:["EMSI — دبلوم مهندس في هندسة الحاسوب","التخرج المتوقع سنة 2026","جامعة شعيب الدكالي — إجازة في الفيزياء وأساسيات الشبكات والاتصالات (2019–2023)"],
+  certs:"GitHub Copilot (2026) · مقدمة في Machine Learning، Coursera (2025) · أساسيات React، Coursera (2024)"
+}};
+const lang = new URLSearchParams(location.search).get("lang") || "en"; const d=data[lang];
+document.documentElement.lang=lang; document.body.dir=d.dir;
+const entries=d.exp.map(e=>`<div class="entry"><div class="entry-head"><span>${e[0]}</span><span>${e[1]}</span></div><ul>${e[2].map(x=>`<li>${x}</li>`).join("")}</ul></div>`).join("");
+const skills=d.skill.map(s=>`<p><strong>${s[0]}:</strong> ${s[1]}</p>`).join("");
+const projects=d.projects.map(p=>`<div class="project"><strong>${p[0]}:</strong> ${p[1]}</div>`).join("");
+document.getElementById("cv").innerHTML=`<header><h1>Marouane Morfi</h1><div class="headline">${d.title}</div><div class="contact">${common.email} · ${common.phone} · ${lang==='ar'?'مراكش، المغرب':common.location} · ${common.linkedin} · ${common.github}</div></header><section><h2>${d.labels.profile}</h2><p>${d.profile}</p></section><section><h2>${d.labels.experience}</h2>${entries}</section><section class="skills"><h2>${d.labels.skills}</h2>${skills}</section><section><h2>${d.labels.projects}</h2><div class="projects">${projects}</div></section><section class="publication"><h2>${d.labels.research}</h2><p>${d.research}</p></section><section><h2>${d.labels.education}</h2><p><strong>${d.education[0]}</strong> · ${d.education[1]}<br>${d.education[2]}</p></section><section><h2>${d.labels.certs}</h2><p>${d.certs}</p></section>`;
+</script></body></html>
