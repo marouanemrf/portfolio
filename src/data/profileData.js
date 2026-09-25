@@ -14,6 +14,7 @@ export const profileData = {
     projectsTitle: "Real software, AI and engineering work.", status: { completed: "Completed", research: "Research", development: "Currently in Development", academic: "Academic Project", professional: "Professional Work" },
     projects: [
       { title: "Tomato Leaf Disease Detection", category: "Computer Vision", status: "research", description: "Research work focused on detecting tomato leaf diseases under real-world open-field and greenhouse conditions.", features: ["Manually annotated imagery", "Object-detection benchmark", "Accuracy and deployment evaluation"], tech: ["Python", "PyTorch", "YOLO", "Computer Vision"], research: true },
+      { title: "Air Canvas", category: "Computer Vision + Web", status: "development", description: "Gesture-controlled drawing app in active development: a React canvas editor paired with a hand-tracking system built from scratch in PyTorch (hand detector + 21-keypoint estimation), without MediaPipe.", features: ["Canvas editor with draw, shapes, images, undo/redo and local/file save", "CenterNet-style anchor-free hand detector", "Mini U-Net heatmap keypoint model with soft-argmax (21 points)", "Real-time webcam tracking with exponential smoothing"], tech: ["React", "Vite", "Tailwind CSS", "Python", "PyTorch", "OpenCV", "Computer Vision"] },
       { title: "FaceSmart", category: "Computer Vision", status: "academic", description: "Desktop face-recognition application using Python and computer vision.", features: ["Face-recognition workflow", "Desktop application", "Python-based processing"], tech: ["Python", "Computer Vision", "Face Recognition", "Desktop Application"] },
       { title: "Smart Irrigation / IoT", category: "IoT + AI", status: "academic", description: "Academic system in which soil and environmental sensor data is analyzed to estimate irrigation needs and support real-time alerts.", features: ["Soil moisture monitoring", "Sensor data analysis", "Irrigation-need estimation", "Real-time monitoring"], tech: ["IoT Sensors", "Python", "AI / Machine Learning"] },
       { title: "Real-Time Mobile Chat Application", category: "Mobile / Backend", status: "academic", description: "Real-time mobile chat application developed in Java with Android Studio and a Spring Boot backend. It supports live conversations through WebSockets, email management via SMTP and MySQL data storage hosted on Aiven.", features: ["Real-time conversations with WebSockets", "Email management with SMTP", "MySQL database hosted on Aiven", "MVC architecture and DTO-based API communication"], tech: ["Java", "Android Studio", "Spring Boot", "WebSockets", "SMTP", "MySQL", "Aiven", "MVC", "DTO"] },
@@ -24,9 +25,9 @@ export const profileData = {
   },
 };
 
-const localize = (language, en, fr, ar) => ({ ...en, ...(language === "fr" ? fr : language === "ar" ? ar : {}) });
+const localize = (en, overrides) => ({ ...en, ...overrides });
 
-profileData.fr = localize("fr", profileData.en, {
+profileData.fr = localize(profileData.en, {
   hero: { title: "Ingénieur Informatique | IA & Machine Learning | Développeur .NET & Java", description: "Ingénieur informatique passionné par l’intelligence artificielle, le Machine Learning et le Software Engineering, avec une expérience pratique dans la création de systèmes backend, d’applications IA et de solutions web modernes avec .NET, Java, Python et les technologies frontend actuelles.", graduation: "Ingénierie informatique — 2026" },
   about: { title: "Concevoir des logiciels avec l’IA au cœur.", paragraphs: ["Ingénieur informatique disposant d’une expérience pratique en ingénierie logicielle, systèmes backend, interfaces d’entreprise, bases de données et applications web modernes. Ma stack principale comprend .NET/C#, ASP.NET Core, Java/Spring Boot et Python.", "Mes travaux et intérêts de recherche portent sur l’IA/ML, le Deep Learning, la vision par ordinateur et les systèmes intelligents appliqués. React, React Native et Blazor complètent mon expertise backend."], cards: [{ value: "Sept. 2026", label: "Diplôme d’ingénieur informatique" }, { value: ".NET + Java", label: "Spécialisation backend" }, { value: "IA / ML", label: "Recherche et systèmes appliqués" }] },
   projectsTitle: "Des réalisations concrètes en logiciel, IA et ingénierie.",
@@ -34,7 +35,7 @@ profileData.fr = localize("fr", profileData.en, {
   education: { degree: "Diplôme d’ingénieur — Ingénierie informatique", school: "EMSI", date: "Diplôme prévu : 2026" },
 });
 
-profileData.ar = localize("ar", profileData.en, {
+profileData.ar = localize(profileData.en, {
   hero: { title: "مهندس حاسوب | الذكاء الاصطناعي والتعلم الآلي | مطور .NET وJava", description: "مهندس حاسوب شغوف بالذكاء الاصطناعي والتعلم الآلي وهندسة البرمجيات، مع خبرة عملية في بناء أنظمة Backend وتطبيقات ذكية وحلول ويب حديثة باستخدام .NET وJava وPython وتقنيات الواجهات الحديثة.", graduation: "هندسة الحاسوب — 2026" },
   about: { title: "هندسة البرمجيات مع الذكاء الاصطناعي في صميمها.", paragraphs: ["مهندس حاسوب ذو خبرة عملية في هندسة البرمجيات وأنظمة Backend وواجهات المؤسسات وقواعد البيانات وتطبيقات الويب الحديثة. تشمل تقنياتي الأساسية .NET/C# وASP.NET Core وJava/Spring Boot وPython.", "تتركز اهتماماتي العملية والبحثية على الذكاء الاصطناعي والتعلم العميق والرؤية الحاسوبية والأنظمة الذكية الواقعية. وتكمل React وReact Native وBlazor خبرتي في Backend."], cards: [{ value: "2026", label: "التخرج في هندسة الحاسوب" }, { value: ".NET + Java", label: "تركيز على Backend" }, { value: "AI / ML", label: "البحث والأنظمة التطبيقية" }] },
   projectsTitle: "أعمال حقيقية في البرمجيات والذكاء الاصطناعي والهندسة.",
@@ -47,6 +48,7 @@ profileData.ar.experience = { role: "تدريب مشروع التخرج — هن
 
 const frProjects = [
   ["Recherche sur la détection des maladies des feuilles de tomate en conditions réelles, en plein champ et sous serre.", ["Images annotées manuellement", "Benchmark de détection d’objets", "Évaluation de la précision et du déploiement"]],
+  ["Application de dessin contrôlée par les gestes, en cours de développement : un éditeur canvas React associé à un système de suivi de la main construit from scratch avec PyTorch (détection de la main + estimation de 21 points clés), sans MediaPipe.", ["Éditeur canvas : dessin, formes, images, annuler/rétablir, sauvegarde locale et fichier", "Détecteur de mains anchor-free de type CenterNet", "Modèle de points clés mini U-Net à heatmaps avec soft-argmax (21 points)", "Suivi webcam en temps réel avec lissage exponentiel"]],
   ["Application desktop de vision par ordinateur centrée sur la reconnaissance faciale.", ["Processus de reconnaissance faciale", "Application desktop", "Traitement avec Python"]],
   ["Système académique analysant les données du sol et de l’environnement afin d’estimer les besoins d’irrigation et d’émettre des alertes.", ["Suivi de l’humidité du sol", "Analyse des capteurs", "Estimation des besoins", "Suivi en temps réel"]],
   ["Application mobile de chat en temps réel développée en Java avec Android Studio et un backend Spring Boot. Elle utilise les WebSockets, SMTP et une base MySQL hébergée sur Aiven.", ["Conversations en temps réel avec WebSockets", "Gestion des emails avec SMTP", "Base MySQL hébergée sur Aiven", "Architecture MVC et communication API via DTO"]],
@@ -54,6 +56,7 @@ const frProjects = [
 ];
 const arProjects = [
   ["عمل بحثي للكشف عن أمراض أوراق الطماطم في ظروف الحقول والبيوت الزجاجية الواقعية.", ["صور مشروحة يدوياً", "مقارنة نماذج كشف الأجسام", "تقييم الدقة وقابلية النشر"]],
+  ["تطبيق رسم يُتحكم فيه بالإيماءات قيد التطوير: محرر Canvas مبني بـReact مع نظام لتتبع اليد مبني من الصفر باستخدام PyTorch (كشف اليد + تقدير 21 نقطة مفصلية) دون الاعتماد على MediaPipe.", ["محرر Canvas: رسم وأشكال وصور وتراجع/إعادة وحفظ محلي أو في ملف", "كاشف يد بدون مراسي على نمط CenterNet", "نموذج نقاط مفصلية Mini U-Net بخرائط حرارية وsoft-argmax (21 نقطة)", "تتبع فوري عبر الكاميرا مع تنعيم أُسّي"]],
   ["تطبيق حاسوبي مكتبي للرؤية الحاسوبية يركز على التعرف على الوجوه.", ["معالجة التعرف على الوجه", "تطبيق مكتبي", "معالجة باستخدام Python"]],
   ["نظام أكاديمي يحلل بيانات التربة والبيئة لتقدير احتياجات الري ودعم التنبيهات الفورية.", ["مراقبة رطوبة التربة", "تحليل بيانات الحساسات", "تقدير احتياجات الري", "مراقبة فورية"]],
   ["تطبيق محادثة فورية للهواتف طُوّر بلغة Java باستخدام Android Studio، مع Backend مبني بـSpring Boot. يستخدم WebSockets وSMTP وقاعدة MySQL مستضافة على Aiven.", ["محادثات فورية باستخدام WebSockets", "إدارة البريد الإلكتروني عبر SMTP", "قاعدة MySQL مستضافة على Aiven", "بنية MVC وتواصل API باستخدام DTO"]],
@@ -61,8 +64,8 @@ const arProjects = [
 ];
 profileData.fr.projects = profileData.en.projects.map((project, index) => ({ ...project, description: frProjects[index][0], features: frProjects[index][1] }));
 profileData.ar.projects = profileData.en.projects.map((project, index) => ({ ...project, description: arProjects[index][0], features: arProjects[index][1] }));
-profileData.fr.projects[3] = { ...profileData.fr.projects[3], title: "Application mobile de chat en temps réel", category: "Mobile / Backend" };
-profileData.ar.projects[3] = { ...profileData.ar.projects[3], title: "تطبيق محادثة فورية للهواتف", category: "تطبيقات الهاتف / Backend" };
+profileData.fr.projects[4] = { ...profileData.fr.projects[4], title: "Application mobile de chat en temps réel", category: "Mobile / Backend" };
+profileData.ar.projects[4] = { ...profileData.ar.projects[4], title: "تطبيق محادثة فورية للهواتف", category: "تطبيقات الهاتف / Backend" };
 profileData.fr.status = { completed: "Terminé", research: "Recherche", development: "Actuellement en développement", academic: "Projet académique", professional: "Travail professionnel" };
 profileData.ar.status = { completed: "مكتمل", research: "بحث", development: "قيد التطوير حالياً", academic: "مشروع أكاديمي", professional: "عمل مهني" };
 
@@ -83,6 +86,7 @@ profileData.ar.skills = profileData.en.skills.map((group, index) => ({
 
 const frProjectIdentity = [
   ["Détection des maladies des feuilles de tomate", "Vision par ordinateur"],
+  ["Air Canvas", "Vision par ordinateur + Web"],
   ["FaceSmart", "Vision par ordinateur"],
   ["Irrigation intelligente / IoT", "IoT + IA"],
   ["Application mobile de chat en temps réel", "Mobile / Backend"],
@@ -90,6 +94,7 @@ const frProjectIdentity = [
 ];
 const arProjectIdentity = [
   ["اكتشاف أمراض أوراق الطماطم", "الرؤية الحاسوبية"],
+  ["Air Canvas", "الرؤية الحاسوبية + الويب"],
   ["FaceSmart", "الرؤية الحاسوبية"],
   ["الري الذكي / إنترنت الأشياء", "إنترنت الأشياء + الذكاء الاصطناعي"],
   ["تطبيق محادثة فورية للهواتف", "الهاتف / Backend"],

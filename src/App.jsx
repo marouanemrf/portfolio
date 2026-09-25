@@ -4,7 +4,6 @@ import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import CurrentProject from "./components/CurrentProject";
 import Research from "./components/Research";
 import ResearchInterests from "./components/ResearchInterests";
 import Education from "./components/Education";
@@ -44,7 +43,6 @@ export default function App() {
         <Skills t={t} />
         <Experience t={t} />
         <Projects t={t} />
-        <CurrentProject t={t} />
         <Research t={t} />
         <ResearchInterests t={t} />
         <Education t={t} />

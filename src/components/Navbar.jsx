@@ -19,7 +19,6 @@ export default function Navbar({ t }) {
     ["skills", t.nav.skills],
     ["experience", t.nav.experience],
     ["projects", t.nav.projects],
-    ["current-project", { en: "In development", fr: "En développement", ar: "قيد التطوير" }[language]],
     ["research", t.nav.research],
     ["education", t.nav.education],
     ["contact", t.nav.contact],
