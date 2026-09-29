@@ -8,8 +8,8 @@ const labels = {
 };
 
 const versions = [
-  { code: "ENG", names: { en: "English", fr: "Anglais", ar: "الإنجليزية" }, file: "/Marouane_Morfi_CV_ENG.pdf" },
-  { code: "FR", names: { en: "French", fr: "Français", ar: "الفرنسية" }, file: "/Marouane_Morfi_CV_FR.pdf" },
+  { code: "ENG", names: { en: "English", fr: "Anglais", ar: "الإنجليزية" }, file: "/CV_ENG_Marouane_Morfi.pdf" },
+  { code: "FR", names: { en: "French", fr: "Français", ar: "الفرنسية" }, file: "/CV_Fr_Marouane_Morfi.pdf" },
   { code: "AR", names: { en: "Arabic", fr: "Arabe", ar: "العربية" }, file: "/Marouane_Morfi_CV_AR.pdf" },
 ];
 
