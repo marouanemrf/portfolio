@@ -1002,6 +1002,29 @@ button {
   border-inline-start: 3px solid var(--accent);
 }
 
+.conclusion-card .capability-list { margin-top: 16px; }
+.live-stage-card { border-inline-start-color: #f6b94b; }
+.live-stage-card .research-subhead { color: #f6b94b; }
+.publication-actions .development-badge { justify-content: center; }
+.model-strip .architecture-flow { margin: 22px 0 4px; }
+.architecture-step small { color: var(--muted); font-size: 11px; line-height: 1.45; }
+.architecture-step .pipeline-index { color: var(--accent); font-weight: 900; text-transform: uppercase; letter-spacing: .08em; font-size: 10px; }
+.formula-list { margin: 18px 0 0; display: grid; gap: 8px; }
+.formula-list div { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 10px; align-items: baseline; padding: 9px 12px; border: 1px solid var(--line); border-radius: 11px; background: color-mix(in srgb, var(--panel-solid) 40%, transparent); }
+.formula-list dt { color: var(--accent); font-size: 11px; font-weight: 900; }
+.formula-list dd { margin: 0; color: var(--soft); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 12px; overflow-wrap: anywhere; }
+.keypoint-chart-title { margin: 24px 0 12px; color: var(--soft); font-size: 13px; }
+.keypoint-chart { position: relative; height: 150px; padding-top: 22px; display: flex; align-items: flex-end; gap: 2px; border-bottom: 1px solid var(--line); direction: ltr; }
+.keypoint-bar { position: relative; flex: 1 1 0; height: var(--height); min-height: 4px; border-radius: 4px 4px 0 0; background: var(--accent); opacity: .85; cursor: default; }
+.keypoint-bar:hover { opacity: 1; }
+.keypoint-bar em { position: absolute; bottom: calc(100% + 5px); left: 0; color: var(--muted); font-size: 10px; font-style: normal; font-weight: 800; white-space: nowrap; }
+.keypoint-bar:last-child em { left: auto; right: 0; }
+.keypoint-bar::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); padding: 6px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-solid); color: var(--text); font-size: 11px; font-weight: 700; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .15s ease; z-index: 2; box-shadow: var(--shadow); }
+.keypoint-bar:first-child::after { left: 0; transform: none; }
+.keypoint-bar:last-child::after { left: auto; right: 0; transform: none; }
+.keypoint-bar:hover::after { opacity: 1; }
+.keypoint-bar:hover em { opacity: 0; }
+
 .education-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;

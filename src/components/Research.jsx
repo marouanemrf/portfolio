@@ -133,6 +133,8 @@ export default function Research({ t }) {
           <p>{findingsCopy[1]}</p>
         </article>
 
+        
+
         <div className="research-highlights reveal" aria-label={publicationCopy.highlights}>
           <strong>{publicationCopy.highlights}</strong>
           <div className="tag-list">
