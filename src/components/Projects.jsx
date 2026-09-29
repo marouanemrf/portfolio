@@ -10,7 +10,6 @@ export default function Projects({ t }) {
     <section id="projects" className="section section-muted section-anchor">
       <div className="shell">
         <SectionTitle eyebrow={t.projects.eyebrow} title={profile.projectsTitle}>
-          <p className="section-note">{t.projects.note}</p>
         </SectionTitle>
 
         <div className="project-grid">

@@ -767,6 +767,10 @@ button {
 .flow-arrow { position: absolute; inset-inline-end: -22px; top: 42px; color: var(--accent); }
 .ongoing-research-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 26px; }
 .ongoing-research-grid h4 { margin: 0 0 17px; font-size: 18px; }
+.ongoing-research-stage { grid-column: 1 / -1; padding-top: 24px; border-top: 1px solid var(--line); }
+.research-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.development-badge-done { color: var(--accent-3); border-color: color-mix(in srgb, var(--accent-3) 35%, transparent); background: color-mix(in srgb, var(--accent-3) 8%, transparent); }
+.ongoing-research-journal { margin-top: 20px; }
 .capability-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .capability-list li { display: flex; gap: 9px; color: var(--soft); font-size: 13px; line-height: 1.55; }
 .capability-list svg { flex: 0 0 auto; color: var(--accent-3); margin-top: 2px; }
