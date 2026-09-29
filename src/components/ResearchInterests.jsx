@@ -39,9 +39,8 @@ const ongoingResearch = {
       "Test the full pipeline on the live webcam and measure keypoint error on detector crops.",
       "The user corrects boxes and points live; corrected samples are collected.",
       "The models are fine-tuned on these corrections, and the cycle repeats.",
-      "In parallel: soft-argmax grid fix, loss rebalancing and full-validation mAP@0.5 / 0.75.",
+      "In parallel: soft-argmax grid fix, loss rebalancing and mAP@0.5 / 0.75 evaluation.",
     ],
-    note: "Detector scores come from 100 validation hands, and keypoint scores use ground-truth crops. Live webcam performance is not measured yet.",
     journal: "Read the project journal (PDF)",
   },
   fr: {
@@ -71,9 +70,8 @@ const ongoingResearch = {
       "Tester le pipeline complet sur webcam en direct et mesurer l’erreur des points clés sur les découpes du détecteur.",
       "L’utilisateur corrige les boîtes et les points en direct ; les échantillons corrigés sont collectés.",
       "Les modèles sont ré-entraînés (fine-tuning) sur ces corrections, puis le cycle recommence.",
-      "En parallèle : correction de la grille du soft-argmax, rééquilibrage des pertes et mAP@0,5 / 0,75 sur toute la validation.",
+      "En parallèle : correction de la grille du soft-argmax, rééquilibrage des pertes et évaluation mAP@0,5 / 0,75.",
     ],
-    note: "Les scores du détecteur portent sur 100 mains de validation et ceux des points clés utilisent les découpes réelles. La performance sur webcam en direct n’est pas encore mesurée.",
     journal: "Lire le journal du projet (PDF)",
   },
   ar: {
@@ -103,9 +101,8 @@ const ongoingResearch = {
       "اختبار خط المعالجة الكامل على الكاميرا مباشرة وقياس خطأ النقاط على مقتطعات الكاشف.",
       "يصحح المستخدم الصناديق والنقاط مباشرة، وتُجمع العينات المصححة.",
       "يُعاد ضبط النماذج على هذه التصحيحات، ثم تتكرر الدورة.",
-      "بالتوازي: إصلاح شبكة soft-argmax، وإعادة موازنة الخسائر، وحساب mAP@0.5 / 0.75 على كامل بيانات التحقق.",
+      "بالتوازي: إصلاح شبكة soft-argmax، وإعادة موازنة الخسائر، وحساب mAP@0.5 / 0.75.",
     ],
-    note: "نتائج الكاشف مأخوذة من 100 يد للتحقق، ونتائج النقاط تستخدم المقتطعات الحقيقية. أداء الكاميرا المباشر لم يُقَس بعد.",
     journal: "قراءة يومية المشروع (PDF)",
   },
 };
@@ -137,7 +134,6 @@ export default function ResearchInterests({ t }) {
         <div className="ongoing-research-stage"><h4>{research.stageTitle}</h4><ul className="capability-list">{research.stage.map((item) => <li key={item}><RefreshCw size={16} />{item}</li>)}</ul></div>
       </div>
       <div className="tag-list">{researchTags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-      <p className="ongoing-research-note">{research.note}</p>
       <a className="button button-primary ongoing-research-journal" href="/Marouane_Morfi_Journal_Summary.pdf" target="_blank" rel="noreferrer">
         <FileText size={17} /> {research.journal}
       </a>
